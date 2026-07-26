@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<article class="character-page">
+  <header class="character-hero" style="--accent-color: {{ page.color }}">
+    <div class="character-portrait">
+      <div class="portrait-frame">
+        <span class="portrait-placeholder">{{ page.icon }}</span>
+      </div>
+    </div>
+    <div class="character-meta">
+      <span class="character-role">{{ page.role }}</span>
+      <h1>{{ page.title }}</h1>
+      <p class="character-quote">«{{ page.quote }}»</p>
+      <div class="character-tags">
+        {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </header>
+
+  <section class="character-content">
+    <div class="field-note">
+      <h2>📜 Полевой дневник</h2>
+      {{ content }}
+    </div>
+
+    {% assign char_eps = site.episodes | where: "character", page.title %}
+    {% if char_eps.size > 0 %}
+    <div class="episodes-list">
+      <h2>🎬 Выпуски</h2>
+      <div class="episode-cards">
+        {% for ep in char_eps %}
+        <a href="{{ ep.url | relative_url }}" class="episode-card">
+          <span class="ep-number">{{ ep.category }}</span>
+          <span class="ep-title">{{ ep.title }}</span>
+          <span class="ep-date">{{ ep.date | date: "%d.%m.%Y" }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </section>
+</article>

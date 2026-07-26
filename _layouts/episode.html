@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article class="episode-page">
+  <header class="episode-header">
+    <span class="episode-badge">{{ page.category }}</span>
+    <h1>{{ page.title }}</h1>
+    <p class="episode-meta">
+      <span>🎙️ {{ page.character }}</span>
+      <span>📅 {{ page.date | date: "%d.%m.%Y" }}</span>
+      <span>⏱️ {{ page.duration }}</span>
+    </p>
+  </header>
+
+  {% if page.video %}
+  <div class="video-embed">
+    <iframe width="100%" height="400" src="{{ page.video }}" frameborder="0" allowfullscreen></iframe>
+  </div>
+  {% endif %}
+
+  <section class="episode-content">
+    {{ content }}
+  </section>
+
+  {% if page.sources %}
+  <section class="sources-section">
+    <h2>📚 Источники и проверка</h2>
+    <div class="sources-list">
+      {% for src in page.sources %}
+      <div class="source-item">
+        <span class="source-badge source-{{ src.authority | downcase }}">{{ src.authority }}</span>
+        <a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.title }}</a>
+        <p class="source-claims">{{ src.claims | join: "; " }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.fact_check %}
+  <section class="fact-check">
+    <h2>✅ Проверка фактов</h2>
+    <ul class="fact-list">
+      {% for fact in page.fact_check.verified %}
+      <li class="fact-verified">✓ {{ fact }}</li>
+      {% endfor %}
+      {% for myth in page.fact_check.myths %}
+      <li class="fact-myth">⚠ {{ myth.myth }} → {{ myth.reality }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>

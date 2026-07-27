@@ -1,39 +1,36 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ site.lang | default: 'ru' }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="page-wrapper">
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="{{ '/' | relative_url }}" class="logo">
-          <span class="logo-icon">🧭</span>
-          <span class="logo-text">Earth Memory Studio</span>
-        </a>
-        <nav class="main-nav">
-          <a href="{{ '/' | relative_url }}">Команда</a>
-          <a href="{{ '/characters/gorn/' | relative_url }}">Геология</a>
-          <a href="{{ '/characters/archivist/' | relative_url }}">Архив</a>
-          <a href="{{ '/characters/biologist/' | relative_url }}">Биология</a>
-          <a href="{{ '/episodes/' | relative_url }}">Выпуски</a>
-        </nav>
-      </div>
-    </header>
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}" class="site-logo">
+        <span class="logo-icon">⛏️</span>
+        <span class="logo-text">Earth Memory Studio</span>
+      </a>
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}">Команда</a>
+        <a href="{{ '/episodes/' | relative_url }}">Выпуски</a>
+      </nav>
+    </div>
+  </header>
 
-    <main class="content">
-      {{ content }}
-    </main>
+  <main class="site-main">
+    {{ content }}
+  </main>
 
-    <footer class="site-footer">
-      <p>«Разные мысли. Разные знания. Одна цель — понять мир.»</p>
-      <p class="footer-copy">Earth Memory Studio © 2026</p>
-    </footer>
-  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Earth Memory Studio — Полевой дневник исследовательской команды</p>
+      <p class="footer-note">Все факты проверены по научным источникам</p>
+    </div>
+  </footer>
 </body>
 </html>

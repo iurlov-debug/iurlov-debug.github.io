@@ -1,491 +1,488 @@
+/* Earth Memory Studio — Полевой дневник */
+
 :root {
   --bg-dark: #1a1510;
-  --bg-paper: #f4e8d0;
-  --bg-paper-dark: #e8d5b5;
-  --text-primary: #2c2416;
-  --text-light: #e8dcc4;
-  --accent-gold: #c9a227;
-  --accent-ochre: #b8860b;
-  --accent-green: #4a6741;
-  --border-warm: #8b7355;
-  --shadow: rgba(0,0,0,0.4);
+  --bg-card: #231c16;
+  --bg-locked: #1e1813;
+  --text-primary: #e8dcc8;
+  --text-secondary: #a89b8c;
+  --text-muted: #7a6f64;
+  --accent-gold: #c9a84c;
+  --accent-copper: #b87333;
+  --accent-green: #4a7c59;
+  --border: #3a3228;
+  --border-light: #4a4238;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg-dark);
-  color: var(--text-light);
+  color: var(--text-primary);
   line-height: 1.7;
   min-height: 100vh;
 }
 
-.page-wrapper {
+.container {
   max-width: 1100px;
   margin: 0 auto;
-  background:
-    linear-gradient(180deg, rgba(244,232,208,0.03) 0%, transparent 100%),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a227' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  padding: 0 24px;
 }
 
-/* HEADER */
+/* Header */
 .site-header {
-  background: linear-gradient(180deg, #2a2118 0%, var(--bg-dark) 100%);
-  border-bottom: 2px solid var(--accent-gold);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
 }
 
-.header-inner {
+.site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
 }
 
-.logo {
+.site-logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 12px;
   text-decoration: none;
-  color: var(--text-light);
+  color: var(--text-primary);
 }
 
-.logo-icon { font-size: 1.8rem; }
+.logo-icon {
+  font-size: 28px;
+}
+
 .logo-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 24px;
   font-weight: 700;
   color: var(--accent-gold);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.5px;
 }
 
-.main-nav {
+.site-nav {
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  gap: 28px;
 }
 
-.main-nav a {
-  color: var(--text-light);
+.site-nav a {
+  color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 300;
-  padding: 0.4rem 0;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s;
 }
 
-.main-nav a:hover {
+.site-nav a:hover {
   color: var(--accent-gold);
-  border-bottom-color: var(--accent-gold);
 }
 
-/* CONTENT */
-.content {
-  padding: 2rem;
-  min-height: 70vh;
+/* Main */
+.site-main {
+  padding: 40px 0 80px;
 }
 
-/* HOME — КОМАНДА */
-.team-hero {
+/* Team Section */
+.team-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-gold);
   text-align: center;
-  padding: 3rem 1rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 
-.team-hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  color: var(--accent-gold);
-  margin-bottom: 0.5rem;
-}
-
-.team-hero .subtitle {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  opacity: 0.8;
-  margin-bottom: 3rem;
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-bottom: 40px;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
 }
 
+/* Character Cards */
 .character-card {
-  background: linear-gradient(145deg, #2a2118, #1e1812);
-  border: 1px solid var(--border-warm);
-  border-radius: 4px;
-  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
   text-decoration: none;
-  color: var(--text-light);
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-
-.character-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--accent-color, var(--accent-gold));
+  color: inherit;
+  display: block;
 }
 
 .character-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-gold);
-  box-shadow: 0 8px 24px var(--shadow);
 }
 
-.character-card .card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.character-card .emoji {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
 }
 
-.character-card h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
+.character-card h3 {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
   color: var(--accent-gold);
-  margin-bottom: 0.3rem;
+  margin-bottom: 8px;
 }
 
-.character-card .card-role {
-  font-size: 0.85rem;
+.character-card .role {
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.7;
-  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
 }
 
-.character-card .card-quote {
+.character-card .quote {
   font-style: italic;
-  opacity: 0.8;
-  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-/* LOCKED CARD */
+/* Locked Cards */
 .locked-card {
-  opacity: 0.45;
-  pointer-events: none;
-  position: relative;
-}
-
-.locked-card::after {
-  content: '🔒 Скоро в команде';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(26, 21, 16, 0.9);
-  border: 1px solid var(--accent-gold);
-  padding: 0.6rem 1.2rem;
-  font-size: 0.85rem;
-  color: var(--accent-gold);
-  border-radius: 2px;
-  white-space: nowrap;
-  letter-spacing: 0.05em;
-}
-
-/* CHARACTER PAGE */
-.character-page {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.character-hero {
-  display: flex;
-  gap: 2rem;
-  padding: 2rem;
-  background: linear-gradient(145deg, #2a2118, #1e1812);
-  border: 1px solid var(--border-warm);
-  border-radius: 4px;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.portrait-frame {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid var(--accent-color, var(--accent-gold));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  background: rgba(0,0,0,0.3);
-  flex-shrink: 0;
-}
-
-.character-meta h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  color: var(--accent-color, var(--accent-gold));
-}
-
-.character-role {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  opacity: 0.7;
-}
-
-.character-quote {
-  font-style: italic;
-  margin: 1rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid var(--accent-color, var(--accent-gold));
-  opacity: 0.9;
-}
-
-.character-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.tag {
-  background: rgba(201, 162, 39, 0.15);
-  border: 1px solid var(--accent-gold);
-  padding: 0.2rem 0.8rem;
-  border-radius: 2px;
-  font-size: 0.8rem;
-}
-
-/* FIELD NOTE */
-.field-note {
-  background: var(--bg-paper);
-  color: var(--text-primary);
-  padding: 2.5rem;
-  border-radius: 2px;
-  position: relative;
-  box-shadow: 0 4px 12px var(--shadow);
-}
-
-.field-note::before {
-  content: '📜';
-  position: absolute;
-  top: -15px;
-  left: 2rem;
-  font-size: 2rem;
-  background: var(--bg-paper);
-  padding: 0 0.5rem;
-}
-
-.field-note h2 {
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-
-.field-note h3 {
-  font-family: 'Cormorant Garamond', serif;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-primary);
-}
-
-.field-note p {
-  margin-bottom: 1rem;
-}
-
-/* EPISODES */
-.episodes-list {
-  margin-top: 2rem;
-}
-
-.episodes-list h2 {
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--accent-gold);
-  margin-bottom: 1rem;
-}
-
-.episode-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.episode-card {
-  background: #2a2118;
-  border: 1px solid var(--border-warm);
-  padding: 1.5rem;
-  text-decoration: none;
-  color: var(--text-light);
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-
-.episode-card:hover {
-  border-color: var(--accent-gold);
-  background: #332a1f;
-}
-
-.ep-number {
-  display: block;
-  font-size: 0.8rem;
+  background: var(--bg-locked);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-align: center;
   opacity: 0.6;
-  margin-bottom: 0.3rem;
 }
 
-.ep-title {
-  font-weight: 500;
-}
-
-.ep-date {
+.locked-card .emoji {
+  font-size: 40px;
+  margin-bottom: 12px;
   display: block;
-  font-size: 0.8rem;
-  opacity: 0.5;
-  margin-top: 0.5rem;
+  filter: grayscale(0.5);
 }
 
-/* EPISODE PAGE */
+.locked-card h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.locked-badge {
+  display: inline-block;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.locked-card .quote {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Future Section */
+.future-section {
+  margin-top: 60px;
+}
+
+.future-title {
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+/* Episode Page */
 .episode-page {
   max-width: 800px;
   margin: 0 auto;
 }
 
+.breadcrumb {
+  margin-bottom: 24px;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  margin-right: 16px;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-gold);
+}
+
 .episode-header {
-  text-align: center;
-  padding: 2rem 0;
-  border-bottom: 2px solid var(--accent-gold);
-  margin-bottom: 2rem;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
 }
 
 .episode-badge {
   display: inline-block;
-  background: var(--accent-gold);
+  background: var(--accent-copper);
   color: var(--bg-dark);
-  padding: 0.3rem 1rem;
-  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-radius: 2px;
-  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
 }
 
 .episode-header h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  color: var(--text-light);
-  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
 
 .episode-meta {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  gap: 20px;
+  align-items: center;
   flex-wrap: wrap;
-  opacity: 0.8;
-  font-size: 0.9rem;
 }
 
-.video-embed {
-  margin: 2rem 0;
+.character-tag {
+  background: var(--char-color, var(--accent-copper));
+  color: var(--bg-dark);
+  padding: 4px 12px;
   border-radius: 4px;
-  overflow: hidden;
-  border: 2px solid var(--border-warm);
-}
-
-.episode-content {
-  background: var(--bg-paper);
-  color: var(--text-primary);
-  padding: 2.5rem;
-  border-radius: 2px;
-  margin-bottom: 2rem;
-}
-
-/* SOURCES */
-.sources-section, .fact-check {
-  background: #2a2118;
-  border: 1px solid var(--border-warm);
-  padding: 2rem;
-  border-radius: 4px;
-  margin-bottom: 2rem;
-}
-
-.sources-section h2, .fact-check h2 {
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--accent-gold);
-  margin-bottom: 1.5rem;
-}
-
-.source-item {
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(139, 115, 85, 0.3);
-}
-
-.source-item:last-child { border-bottom: none; }
-
-.source-badge {
-  display: inline-block;
-  padding: 0.15rem 0.5rem;
-  font-size: 0.7rem;
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
-  border-radius: 2px;
-  margin-right: 0.5rem;
 }
 
-.source-s { background: #4a6741; color: #fff; }
-.source-a { background: #2c5f7c; color: #fff; }
-.source-b { background: #8b6914; color: #fff; }
+.duration, .date {
+  color: var(--text-muted);
+  font-size: 14px;
+}
 
-.source-item a {
+/* Episode Content */
+.episode-content {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.episode-content h2 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
   color: var(--accent-gold);
+  margin: 40px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.episode-content h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 32px 0 16px;
+}
+
+.episode-content p {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.episode-content blockquote {
+  border-left: 3px solid var(--accent-gold);
+  padding-left: 24px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.episode-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 15px;
+}
+
+.episode-content th {
+  background: var(--bg-card);
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--accent-gold);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.episode-content td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.episode-content tr:hover td {
+  background: var(--bg-card);
+}
+
+.episode-content a {
+  color: var(--accent-copper);
   text-decoration: none;
-  font-weight: 500;
 }
 
-.source-item a:hover { text-decoration: underline; }
-
-.source-claims {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-top: 0.3rem;
+.episode-content a:hover {
+  text-decoration: underline;
 }
 
-.fact-list {
-  list-style: none;
+.episode-content ul, .episode-content ol {
+  margin: 20px 0;
+  padding-left: 28px;
 }
 
-.fact-list li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
+.episode-content li {
+  margin-bottom: 8px;
+  color: var(--text-secondary);
 }
 
-.fact-verified::before { content: '✓'; position: absolute; left: 0; color: #4a6741; font-weight: bold; }
-.fact-myth::before { content: '⚠'; position: absolute; left: 0; color: #c9a227; }
+/* Fact Status Badges */
+.status-ok {
+  color: #4a7c59;
+  font-weight: 600;
+}
 
-/* FOOTER */
-.site-footer {
+.status-debunk {
+  color: #c75b39;
+  font-weight: 600;
+}
+
+.status-legend {
+  color: #c9a84c;
+  font-weight: 600;
+}
+
+/* Warning Box */
+.episode-content blockquote.warning {
+  border-left-color: #c75b39;
+  background: rgba(199, 91, 57, 0.1);
+  padding: 16px 24px;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Episode Footer */
+.episode-footer {
+  margin-top: 60px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
   text-align: center;
-  padding: 3rem 2rem;
-  border-top: 1px solid var(--border-warm);
-  opacity: 0.7;
-  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
-.footer-copy {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  opacity: 0.5;
+/* Character Page */
+.character-page {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* RESPONSIVE */
+.character-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.character-emoji {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.character-header h1 {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+}
+
+.character-role {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.character-title {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.footer-note {
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .team-grid { grid-template-columns: 1fr; }
-  .character-hero { flex-direction: column; align-items: center; text-align: center; }
-  .character-quote { border-left: none; padding-left: 0; border-top: 3px solid var(--accent-gold); padding-top: 1rem; }
-  .main-nav { justify-content: center; }
-  .team-hero h1 { font-size: 2rem; }
+  .site-header .container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .episode-header h1 {
+    font-size: 32px;
+  }
+
+  .episode-content {
+    font-size: 16px;
+  }
 }

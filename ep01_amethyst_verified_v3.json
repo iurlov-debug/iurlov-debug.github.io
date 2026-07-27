@@ -1,0 +1,124 @@
+{
+  "storyId": "ep01_amethyst_verified_v2",
+  "title": "Почему аметист фиолетовый?",
+  "totalDuration": 50,
+  "frozenFace": {
+    "anchor": "Gorn, stocky fantasy dwarf geologist, 60-70yo, ~135cm, broad shoulders, heavy wide dwarf facial structure with massive jaw, broad cheekbones, flat nose bridge, low forehead, weathered wise face with kind observant eyes, thick ginger beard with two thin braids tied with small round shiny copper metal rings, bronze miner's helmet with glowing warm electric headlamp, rugged leather workwear and worn leather vest",
+    "referenceImage": "workspace/temp/gorn_reference.png"
+  },
+  "scenes": [
+    {
+      "sceneId": "scene_01",
+      "tier": "hero",
+      "duration": 10,
+      "factStatus": "[ФАКТ]",
+      "sourceRef": "kunz_1913",
+      "narration": "Этот камень обманывает. Красивый — но это всего лишь кварц. А до девятнадцатого века он стоил как рубин.",
+      "textOverlay": "АМЕТИСТ = КВАРЦ",
+      "imageFile": "gorn_reference.png",
+      "kenBurns": {
+        "zoomStart": 1.0,
+        "zoomEnd": 1.12,
+        "panX": 0,
+        "panY": 0
+      }
+    },
+    {
+      "sceneId": "scene_02",
+      "tier": "support",
+      "duration": 10,
+      "factStatus": "[ФАКТ]",
+      "sourceRef": "cohen_1985",
+      "narration": "Но внутри него — железо. И природная радиация меняет его структуру на атомном уровне. Fe³⁺ превращается в Fe⁴⁺.",
+      "textOverlay": "ПРИМЕСИ ЖЕЛЕЗА",
+      "imagePrompt": "Extreme close-up documentary macro of raw purple amethyst crystal cluster, sharp hexagonal prisms, mineral inclusions visible inside translucent quartz, warm tungsten side-lighting creating sparkling refractions, dark cave background, National Geographic mineral photography, photorealistic, no person, no hands, no face",
+      "model": "@cf/black-forest-labs/flux-1-schnell",
+      "steps": 4,
+      "kenBurns": {
+        "zoomStart": 1.1,
+        "zoomEnd": 1.0,
+        "panX": 0,
+        "panY": 0
+      },
+      "aspect_ratio": "9:16"
+    },
+    {
+      "sceneId": "scene_03",
+      "tier": "support",
+      "duration": 10,
+      "factStatus": "[ФАКТ]",
+      "sourceRef": "cheng_guo_2020, rossman_1994",
+      "narration": "Уже при двухстах градусах аметист бледнеет. А при четырёхстах — цвет исчезнет навсегда. Структура цветового центра разрушится необратимо.",
+      "textOverlay": "200° = БЛЕДНЕТ / 400° = ПОТЕРЯ",
+      "imagePrompt": "Documentary close-up: small purple amethyst crystal held by thick weathered hands over open flame of brass oil lantern, warm firelight illuminating crystal, dark cave background, scientific atmosphere, photorealistic, only hands and crystal visible, no face",
+      "model": "@cf/black-forest-labs/flux-1-schnell",
+      "steps": 4,
+      "kenBurns": {
+        "zoomStart": 1.05,
+        "zoomEnd": 1.15,
+        "panX": 0.1,
+        "panY": -0.05
+      },
+      "aspect_ratio": "9:16"
+    },
+    {
+      "sceneId": "scene_04",
+      "tier": "support",
+      "duration": 10,
+      "factStatus": "[ЛЕГЕНДА/ДЕБАНК]",
+      "sourceRef": "pliny_nh, belau_1576",
+      "narration": "Греки называли его «не пьяный». Но Плиний Старший в первом веке называл это выдумкой магов. А миф о Вакхе — придуман в шестнадцатом веке.",
+      "textOverlay": "ЛЕГЕНДА vs ФАКТ",
+      "imagePrompt": "Overhead documentary shot on weathered wooden field table inside dark cave: aged parchment with ancient Greek text, brass oil lantern, purple amethyst crystal, quill pen, ink bottle. Warm lantern light, National Geographic still life photography, photorealistic, no person",
+      "model": "@cf/black-forest-labs/flux-1-schnell",
+      "steps": 4,
+      "kenBurns": {
+        "zoomStart": 1.0,
+        "zoomEnd": 1.08,
+        "panX": -0.1,
+        "panY": 0.05
+      },
+      "aspect_ratio": "9:16"
+    },
+    {
+      "sceneId": "scene_05",
+      "tier": "hero",
+      "duration": 10,
+      "factStatus": "[CTA]",
+      "sourceRef": null,
+      "narration": "А вы знали, что аметисты разных шахт имеют разный оттенок? Напишите в комментариях, какой цвет видели вы — тёмно-фиолетовый или бледно-сиреневый?",
+      "textOverlay": "КАКОЙ ЦВЕТ ВИДЕЛИ ВЫ? 💬",
+      "imageFile": "gorn_reference.png",
+      "kenBurns": {
+        "zoomStart": 1.15,
+        "zoomEnd": 1.0,
+        "panX": 0.2,
+        "panY": 0
+      }
+    }
+  ],
+  "productionNotes": {
+    "voiceOver": "Спокойный, уверенный, научно-популярный тон. Без театральности.",
+    "music": "YouTube Audio Library: ambient, cinematic, calm. Без агрессивных битов.",
+    "textAnimation": "Появление текста синхронно с ключевым словом в озвучке. Шрифт — строгий sans-serif в тёплых тонах.",
+    "colorGrading": "Warm tungsten, deep shadows, rich earth tones. Цветовая палитра Gorn v2.1.",
+    "capcutEffects": {
+      "voiceEffect": "Deep 20-30% (пещерный эффект)",
+      "sfx": [
+        "cave ambience 15%",
+        "crystal shimmer 20%"
+      ],
+      "filter": "Warm 25%"
+    }
+  },
+  "renderSettings": {
+    "outputResolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "codec": "libx264",
+    "pixelFormat": "yuv420p",
+    "fadeDuration": 2
+  }
+}

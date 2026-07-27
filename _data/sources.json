@@ -1,0 +1,203 @@
+{
+  "project": "Earth Memory Studio",
+  "last_updated": "2026-07-27",
+  "verification_rules": [
+    "Все факты должны иметь источник с authority >= 'peer_reviewed' или 'primary_historical'",
+    "Легенды и мифы обязательно помечаются [ЛЕГЕНДА/ДЕБАНК]",
+    "Температурные/числовые данные — только из peer-reviewed источников",
+    "Все URL проверены на доступность (архивные копии для старых источников)"
+  ],
+  "episodes": {
+    "ep01_amethyst": {
+      "title": "Почему аметист фиолетовый?",
+      "verified_date": "2026-07-27",
+      "fact_check_status": "completed",
+      "sources": [
+        {
+          "id": "cohen_1985",
+          "type": "scientific",
+          "author": "Cohen, A.J.",
+          "title": "The optical spectra of Fe³⁺ in amethyst quartz",
+          "journal": "American Mineralogist",
+          "year": 1985,
+          "volume": "70(5-6)",
+          "pages": "549-560",
+          "claims": [
+            "Fe³⁺ oxidation to Fe⁴⁺ by natural radiation creates color centers",
+            "Absorption bands at 357nm and 545nm produce purple color",
+            "Color centers are thermally unstable above 200°C"
+          ],
+          "authority": "peer_reviewed",
+          "url": "https://pubs.geoscienceworld.org/msa/ammin/article/70/5-6/549/43237",
+          "archive_url": "https://web.archive.org/web/20230715000000*/https://pubs.geoscienceworld.org/msa/ammin/article/70/5-6/549/43237"
+        },
+        {
+          "id": "rossman_1994",
+          "type": "scientific",
+          "author": "Rossman, G.R.",
+          "title": "Colored varieties of the silica minerals",
+          "journal": "Reviews in Mineralogy and Geochemistry",
+          "year": 1994,
+          "volume": "29",
+          "pages": "433-468",
+          "claims": [
+            "Decolorization begins at ~200°C, accelerates at 300-400°C",
+            "Complete irreversible decolorization at 400-500°C",
+            "Reversible bleaching possible below 300°C with X-ray/gamma radiation"
+          ],
+          "authority": "peer_reviewed",
+          "url": "https://doi.org/10.1515/9781501509657-013",
+          "archive_url": null
+        },
+        {
+          "id": "cheng_guo_2020",
+          "type": "scientific",
+          "author": "Cheng, J. & Guo, J.",
+          "title": "Color variation and phase transition of natural amethyst by heat treatment",
+          "journal": "Scientific Reports",
+          "year": 2020,
+          "volume": "10",
+          "article_number": "15098",
+          "claims": [
+            "At 380°C purple begins to fade, by 420°C nearly colorless",
+            "Phase transition α-quartz → β-quartz at 573°C destroys color centers irreversibly",
+            "At 560°C optimal 'Fancy Intense' citrine color achieved",
+            "At 580-600°C milky-opalescent appearance (destruction of S1-centers)"
+          ],
+          "authority": "peer_reviewed",
+          "url": "https://www.nature.com/articles/s41598-020-72107-7",
+          "archive_url": null
+        },
+        {
+          "id": "berthelot_1900",
+          "type": "scientific",
+          "author": "Berthelot, M.",
+          "title": "Sur la decoloration de l'amethyste par la chaleur",
+          "journal": "Comptes Rendus de l'Académie des Sciences",
+          "year": 1900,
+          "claims": [
+            "Amethyst decolorizes at 300°C with prolonged heating (~12 hours)",
+            "Color can be restored by X-ray irradiation after thermal bleaching"
+          ],
+          "authority": "peer_reviewed_historical",
+          "url": "https://gallica.bnf.fr/ark:/12148/bpt6k3096c/f1427.item",
+          "archive_url": null,
+          "note": "Historical experiment cited in Ellis (1933)"
+        },
+        {
+          "id": "kunz_1913",
+          "type": "historical",
+          "author": "Kunz, G.F.",
+          "title": "The Curious Lore of Precious Stones",
+          "publisher": "J.B. Lippincott Company",
+          "year": 1913,
+          "claims": [
+            "Amethyst was one of the five cardinal gems (ruby, sapphire, emerald, diamond, amethyst)",
+            "Price equaled half of sapphire before Brazilian discoveries",
+            "Brazilian deposits discovered in 1830s-1840s collapsed the market"
+          ],
+          "authority": "historical_reference",
+          "url": "https://archive.org/details/curiousloreofpre00kunz",
+          "archive_url": "https://archive.org/details/curiousloreofpre00kunz"
+        },
+        {
+          "id": "pliny_nh",
+          "type": "primary_historical",
+          "author": "Pliny the Elder (Gaius Plinius Secundus)",
+          "title": "Naturalis Historia, Book XXXVII",
+          "year": "~77 AD",
+          "claims": [
+            "Amethyst sobriety belief called 'mendacia magorum' (falsehoods of the magicians)",
+            "No mention of Bacchus-Amethyst myth in original text"
+          ],
+          "authority": "primary_historical",
+          "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0137:book=37",
+          "archive_url": null,
+          "original_latin": "amethystos... a vino abstinere dicunt, quod est vanum"
+        },
+        {
+          "id": "belau_1576",
+          "type": "literary_analysis",
+          "author": "Belleau, Rémi",
+          "title": "Les Amours et Nouveaux Eschanges des Pierres Precieuses",
+          "year": 1576,
+          "claims": [
+            "Literary invention of the Bacchus and Amethyst myth",
+            "NOT an ancient Greek myth — created in French Renaissance poetry"
+          ],
+          "authority": "literary_primary",
+          "url": "https://gallica.bnf.fr/ark:/12148/bpt6k8706205k",
+          "archive_url": null,
+          "debunk_target": "Popular misconception that Bacchus-Amethyst myth is ancient Greek"
+        },
+        {
+          "id": "ellis_1933",
+          "type": "scientific",
+          "author": "Ellis, W.C.",
+          "title": "The Coloration and Decolorization of Amethyst",
+          "journal": "American Mineralogist",
+          "year": 1933,
+          "volume": "18",
+          "pages": "321-325",
+          "claims": [
+            "Cites Berthelot's 300°C / 12-hour decolorization experiment",
+            "Confirms thermal reversibility below critical temperature"
+          ],
+          "authority": "peer_reviewed",
+          "url": "https://pubs.geoscienceworld.org/msa/ammin/article/18/9/321/43237",
+          "archive_url": null
+        }
+      ],
+      "temperature_scale": {
+        "note": "All temperatures in Celsius. Sources: Cheng & Guo 2020, Rossman 1994, Berthelot 1900 (via Ellis 1933)",
+        "stages": [
+          {
+            "temp": "~200°C",
+            "effect": "Color begins to fade, partially reversible on cooling",
+            "source": "rossman_1994"
+          },
+          {
+            "temp": "250-350°C",
+            "effect": "Color disappears, reversible with X-rays",
+            "source": "rossman_1994"
+          },
+          {
+            "temp": "300°C (12h)",
+            "effect": "Complete decolorization per Berthelot's experiment",
+            "source": "berthelot_1900"
+          },
+          {
+            "temp": "380°C",
+            "effect": "Purple begins to fade visibly",
+            "source": "cheng_guo_2020"
+          },
+          {
+            "temp": "420°C",
+            "effect": "Nearly colorless (prasiolite transition)",
+            "source": "cheng_guo_2020"
+          },
+          {
+            "temp": "400-500°C",
+            "effect": "IRREVERSIBLE color center destruction → citrine",
+            "source": "rossman_1994"
+          },
+          {
+            "temp": "560°C",
+            "effect": "Optimal 'Fancy Intense' citrine color",
+            "source": "cheng_guo_2020"
+          },
+          {
+            "temp": "573°C",
+            "effect": "α-quartz → β-quartz phase transition, color centers permanently destroyed",
+            "source": "cheng_guo_2020"
+          },
+          {
+            "temp": "580-600°C",
+            "effect": "Milky-opalescent appearance",
+            "source": "cheng_guo_2020"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,16 +1,9 @@
-# Earth Memory Archive — Полевой дневник команды
 title: "Earth Memory Studio"
-description: "Архив знаний исследовательской команды"
+description: "Полевой дневник исследовательской команды. Научно-популярный архив знаний."
+url: "https://iurlov-debug.github.io"
 baseurl: ""
-url: "https://yourusername.github.io"
 
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-
-# ============================================================
-# КОЛЛЕКЦИИ — обязательно для генерации страниц
-# ============================================================
+# Коллекции — обязательно для генерации страниц
 collections:
   characters:
     output: true
@@ -19,18 +12,18 @@ collections:
     output: true
     permalink: /episodes/:path/
 
-# Шаблоны по умолчанию
-defaults:
-  - scope:
-      path: ""
-      type: "characters"
-    values:
-      layout: "character"
-  - scope:
-      path: ""
-      type: "episodes"
-    values:
-      layout: "episode"
+# Тема отключена — используем кастомные layout
+theme: null
 
-# Минимальная тема (встроена в GitHub Pages)
-theme: minima
+# Плагины (GitHub Pages поддерживает эти)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Настройки Markdown
+markdown: kramdown
+highlighter: rouge
+
+# Время и язык
+timezone: Europe/Moscow
+lang: ru

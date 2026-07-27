@@ -3,52 +3,37 @@ layout: default
 ---
 
 <article class="episode-page">
-  <header class="episode-header">
-    <span class="episode-badge">{{ page.category }}</span>
-    <h1>{{ page.title }}</h1>
-    <p class="episode-meta">
-      <span>🎙️ {{ page.character }}</span>
-      <span>📅 {{ page.date | date: "%d.%m.%Y" }}</span>
-      <span>⏱️ {{ page.duration }}</span>
-    </p>
-  </header>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="{{ '/' | relative_url }}">← Команда</a>
+      <a href="{{ '/episodes/' | relative_url }}">← Выпуски</a>
+    </nav>
 
-  {% if page.video %}
-  <div class="video-embed">
-    <iframe width="100%" height="400" src="{{ page.video }}" frameborder="0" allowfullscreen></iframe>
-  </div>
-  {% endif %}
-
-  <section class="episode-content">
-    {{ content }}
-  </section>
-
-  {% if page.sources %}
-  <section class="sources-section">
-    <h2>📚 Источники и проверка</h2>
-    <div class="sources-list">
-      {% for src in page.sources %}
-      <div class="source-item">
-        <span class="source-badge source-{{ src.authority | downcase }}">{{ src.authority }}</span>
-        <a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.title }}</a>
-        <p class="source-claims">{{ src.claims | join: "; " }}</p>
+    <header class="episode-header">
+      <span class="episode-badge">Выпуск {{ page.episode_id }}</span>
+      <h1>{{ page.title }}</h1>
+      <div class="episode-meta">
+        <span class="character-tag" style="--char-color: {{ site.data.characters[page.character].color | default: '#C75B39' }}">
+          {{ page.character | capitalize }}
+        </span>
+        <span class="duration">⏱ {{ page.duration }}</span>
+        <span class="date">{{ page.date | date: "%d.%m.%Y" }}</span>
       </div>
-      {% endfor %}
-    </div>
-  </section>
-  {% endif %}
+    </header>
 
-  {% if page.fact_check %}
-  <section class="fact-check">
-    <h2>✅ Проверка фактов</h2>
-    <ul class="fact-list">
-      {% for fact in page.fact_check.verified %}
-      <li class="fact-verified">✓ {{ fact }}</li>
-      {% endfor %}
-      {% for myth in page.fact_check.myths %}
-      <li class="fact-myth">⚠ {{ myth.myth }} → {{ myth.reality }}</li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
+    {% if page.youtube_shorts != '[ссылка после публикации]' %}
+    <div class="episode-video">
+      <p>YouTube Shorts: <a href="{{ page.youtube_shorts }}" target="_blank">{{ page.youtube_shorts }}</a></p>
+    </div>
+    {% endif %}
+
+    <div class="episode-content">
+      {{ content }}
+    </div>
+
+    <footer class="episode-footer">
+      <p><strong>Все факты проверены.</strong> Источники указаны в разделе «Проверенные факты».</p>
+      <p><a href="{{ '/episodes/' | relative_url }}">← Все выпуски</a></p>
+    </footer>
+  </div>
 </article>
